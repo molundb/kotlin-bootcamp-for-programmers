@@ -45,4 +45,5 @@ fun buildAquarium() {
                 "height ${myAquarium2.height} "
     )
 
+    val towerTank = TowerTank()
 }
