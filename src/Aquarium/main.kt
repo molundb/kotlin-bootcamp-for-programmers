@@ -1,7 +1,13 @@
 package Aquarium
 
+import src.Aquarium.FishAction
+import src.Aquarium.Plecostomus
+import src.Aquarium.Shark
+
 fun main(args: Array<String>) {
     buildAquarium()
+    makeSpices()
+    makeFish()
 }
 
 fun buildAquarium() {
@@ -20,6 +26,20 @@ fun buildAquarium() {
 
     println("Volume: ${myAquarium.volume} liters")
 
+    val smallAquarium = Aquarium(length = 20, width = 15, height = 30)
+    println("Small Aquarium: ${smallAquarium.volume} liters")
+
+    val myAquarium2 = Aquarium(numberOfFish = 9)
+
+    println(
+        "Small Aquarium 2: ${myAquarium2.volume} liters with " +
+                "legnth ${myAquarium2.length} " +
+                "width ${myAquarium2.width} " +
+                "height ${myAquarium2.height} "
+    )
+}
+
+fun makeSpices() {
     val spice = SimpleSpice()
 
     println(spice.name)
@@ -32,18 +52,19 @@ fun buildAquarium() {
     )
 
     spiceList.filter { spice.heat > 1 }
+}
 
-    val smallAquarium = Aquarium(length = 20, width = 15, height = 30)
-    println("Small Aquarium: ${smallAquarium.volume} liters")
+fun feedFish(fish: FishAction) {
+    // make some food then
+    fish.eat()
+}
 
-    val myAquarium2 = Aquarium(numberOfFish = 9)
+fun makeFish() {
+    val shark = Shark()
+    val pleco = Plecostomus()
 
-    println(
-        "Small Aquarium 2: ${myAquarium2.volume} liters with " +
-                "legnth ${myAquarium2.length} " +
-                "width ${myAquarium2.width} " +
-                "height ${myAquarium2.height} "
-    )
+    println ("Shark: ${shark.color} \nPlecostomus: ${pleco.color}")
 
-    val towerTank = TowerTank()
+    shark.eat()
+    pleco.eat()
 }
