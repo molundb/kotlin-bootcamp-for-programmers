@@ -2,12 +2,19 @@ package Aquarium
 
 fun main(args: Array<String>) {
     val curry = Curry("curry", "mild")
+    val chili = Curry("chili", "spicy")
 
     println("Color: ${curry.color}")
+
+    val spiceCabinet = listOf(SpiceContainer(Curry("Yellow Curry", "mild")),
+        SpiceContainer(Curry("Red Curry", "medium")),
+        SpiceContainer(Curry("Green Curry", "spicy")))
+
+    for (element in spiceCabinet) println(element.label)
 }
 
 abstract class Spice(
-    private val name: String,
+    val name: String,
     private val spiciness: String = "mild",
     color: SpiceColor): SpiceColor by color {
 
@@ -34,4 +41,9 @@ interface SpiceColor {
 
 object YellowSpiceColor : SpiceColor {
     override val color = "Yellow"
+}
+
+data class SpiceContainer(val spice: Spice) {
+
+    val label = spice.name
 }
