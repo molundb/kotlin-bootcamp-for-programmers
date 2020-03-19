@@ -44,14 +44,6 @@ fun makeSpices() {
 
     println(spice.name)
     println(spice.heat)
-
-    val spiceList = listOf(
-        Spice("cayenne pepper", "medium"),
-        Spice("paprika"),
-        Spice("chili", "hot")
-    )
-
-    spiceList.filter { spice.heat > 1 }
 }
 
 fun feedFish(fish: FishAction) {
