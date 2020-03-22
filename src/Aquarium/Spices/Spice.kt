@@ -1,5 +1,7 @@
 package Aquarium
 
+import src.Aquarium.Color
+
 fun main(args: Array<String>) {
     val curry = Curry("curry", "mild")
     val chili = Curry("chili", "spicy")
@@ -13,7 +15,7 @@ fun main(args: Array<String>) {
     for (element in spiceCabinet) println(element.label)
 }
 
-abstract class Spice(
+sealed class Spice(
     val name: String,
     private val spiciness: String = "mild",
     color: SpiceColor): SpiceColor by color {
@@ -36,11 +38,11 @@ interface Grinder {
 }
 
 interface SpiceColor {
-    val color: String
+    val color: Color
 }
 
 object YellowSpiceColor : SpiceColor {
-    override val color = "Yellow"
+    override val color = Color.YELLOW
 }
 
 data class SpiceContainer(val spice: Spice) {
