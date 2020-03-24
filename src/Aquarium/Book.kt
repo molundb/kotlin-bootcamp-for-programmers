@@ -1,19 +1,13 @@
 package src.Aquarium
 
-open class Book(val title: String, val author: String) {
+fun main(args: Array<String>) {
+    val book = Book("Titel", "Martin", 2010)
 
-    private var currentPage = 1
-
-    open fun readPage() {
-        currentPage++
-    }
+    println("Here is your book ${book.getTitleAuthor().first} written by ${book.getTitleAuthor().second} in ${book.getTitleAuthorYear().third}")
 }
 
-class eBook(title: String, author: String, var format: String = "text"): Book(title, author) {
+class Book(private val title: String, private val author: String, private val year: Int) {
 
-    private var wordsRead = 0
-
-    override fun readPage() {
-        wordsRead += 250
-    }
+    fun getTitleAuthor() = title to author
+    fun getTitleAuthorYear() = Triple(title, author, year)
 }
