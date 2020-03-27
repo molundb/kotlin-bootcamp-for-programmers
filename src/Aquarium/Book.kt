@@ -1,5 +1,7 @@
 package src.Aquarium
 
+const val MAXIMUM_NUMBER_OF_BORROWED_BOOKS = 3
+
 fun main(args: Array<String>) {
     val book = Book("Titel", "Martin", 2010)
 
@@ -26,6 +28,14 @@ fun main(args: Array<String>) {
 
 class Book(private val title: String, private val author: String, private val year: Int) {
 
+    companion object {
+        const val BASE_URL = "www.books.com"
+    }
+
     fun getTitleAuthor() = title to author
     fun getTitleAuthorYear() = Triple(title, author, year)
+
+    fun canBorrow() = MAXIMUM_NUMBER_OF_BORROWED_BOOKS
+
+    fun printUrl() = println("$BASE_URL$title.html")
 }
