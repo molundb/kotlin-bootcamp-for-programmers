@@ -17,12 +17,12 @@ class Brick : BaseBuildingMaterial() {
     override val numberNeeded: Int = 8
 }
 
-class Building<T: BaseBuildingMaterial>(val buildingMaterial: T) {
+class Building<T: BaseBuildingMaterial>(private val buildingMaterial: T) {
 
-    val baseMaterialsNeeded = 100
-    val actualMaterialsNeeded = baseMaterialsNeeded * buildingMaterial.numberNeeded
+    private val baseMaterialsNeeded = 100
+    private val actualMaterialsNeeded = baseMaterialsNeeded * buildingMaterial.numberNeeded
 
     fun build() {
-        println("We need ${actualMaterialsNeeded} ${buildingMaterial::class.simpleName}")
+        println("We need $actualMaterialsNeeded ${buildingMaterial::class.simpleName}")
     }
 }
