@@ -2,13 +2,11 @@ package src.Aquarium
 
 fun main(args: Array<String>) {
     val game = Game()
-    println(game.path)
-    game.north()
-    game.east()
-    game.south()
-    game.west()
-    game.end()
-    println(game.path)
+
+    while(true) {
+        print("Enter a direction: n/s/e/w: ")
+        game.makeMove(readLine())
+    }
 }
 
 enum class Direction {
@@ -24,10 +22,10 @@ class Game {
 
     var path: MutableList<Direction> = mutableListOf(Direction.START)
 
-    val north = { path.add(Direction.NORTH) }
-    val south = { path.add(Direction.SOUTH) }
-    val east = { path.add(Direction.EAST) }
-    val west = { path.add(Direction.WEST) }
+    private val north = { path.add(Direction.NORTH) }
+    private val south = { path.add(Direction.SOUTH) }
+    private val east = { path.add(Direction.EAST) }
+    private val west = { path.add(Direction.WEST) }
 
     val end = {
         path.add(Direction.END)
@@ -35,5 +33,19 @@ class Game {
         println(path)
         path.clear()
         false
+    }
+
+    private fun move(where: () -> Boolean) {
+        where.invoke()
+    }
+
+    fun makeMove(move: String?) {
+        when (move) {
+            "n" -> move(north)
+            "s" -> move(south)
+            "e" -> move(east)
+            "w" -> move(west)
+            else -> move(end)
+        }
     }
 }
