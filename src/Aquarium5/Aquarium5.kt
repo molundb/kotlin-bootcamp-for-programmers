@@ -32,7 +32,6 @@ fun fishExamples() {
 }
 
 fun myWith(name: String, block: String.() -> Unit) {
-
     name.block()
 }
 
