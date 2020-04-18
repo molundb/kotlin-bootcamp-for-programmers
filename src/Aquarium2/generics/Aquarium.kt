@@ -1,4 +1,4 @@
-package src.Aquarium.generics
+package src.Aquarium2.generics
 
 fun main(args: Array<String>) {
     genericExample()

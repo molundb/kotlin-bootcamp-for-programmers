@@ -1,4 +1,4 @@
-package src.Aquarium
+package src.Aquarium2
 
 object MobyDickWhale {
 

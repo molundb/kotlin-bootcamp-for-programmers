@@ -1,6 +1,6 @@
 package Aquarium
 
-import src.Aquarium.Color
+import src.Aquarium2.Color
 
 fun main(args: Array<String>) {
     val curry = Curry("curry", "mild")

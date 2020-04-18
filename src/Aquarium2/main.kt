@@ -1,8 +1,8 @@
 package Aquarium
 
-import src.Aquarium.FishAction
-import src.Aquarium.Plecostomus
-import src.Aquarium.Shark
+import src.Aquarium2.FishAction
+import src.Aquarium2.Plecostomus
+import src.Aquarium2.Shark
 
 fun main(args: Array<String>) {
     buildAquarium()

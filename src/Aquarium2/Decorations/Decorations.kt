@@ -1,4 +1,4 @@
-package src.Aquarium.Decorations
+package src.Aquarium2.Decorations
 
 fun main (args: Array<String>) {
     makeDecorations()

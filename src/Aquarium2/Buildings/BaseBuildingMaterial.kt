@@ -1,4 +1,4 @@
-package src.Aquarium.Buildings
+package src.Aquarium2.Buildings
 
 fun main(args: Array<String>) {
     val woodBuilding = Building(Wood())
